@@ -9,4 +9,10 @@ import { DUMMY_USERS } from '../dummy-users';
 })
 export class UserComponent {
     user=DUMMY_USERS[0];
+
+      userImage="/users/"+this.user.avatar;
+
+      get imagepath(){
+        return "/users/"+this.user.avatar;
+      }
 }
