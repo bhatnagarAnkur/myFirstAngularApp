@@ -15,8 +15,19 @@ export class AppComponent {
   title = 'myFirstAngularApp';
   users=DUMMY_USERS;
 
+  SelectedUserId!:string;
+  username!:string;
+
   onSelected(userId:string)
   {
+    this.SelectedUserId=userId;
+    const u=this.users.find(user => user.id === userId);
+    if (u) {
+      this.username=u.name; // Output: 'Jasmine Washington'
+    } else {
+      console.log('User not found');
+    }
+    
     console.log("Selected the user with id: "+userId);
   }
 }
